@@ -45,6 +45,8 @@ function gameStart()
     require("src/startup/require")
     requireAll()
 
+    talkies = require('libraries/talkies/talkies')
+    talkies.font = fonts.shop
 end
 
 function setWindowSize(full, width, height)

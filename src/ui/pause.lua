@@ -10,8 +10,8 @@ pause.y = 40 * pause.scale
 pause.trueY = 0 * pause.scale
 pause.fadeY = 40 * pause.scale
 
-pause.textHoverName = ""
-pause.textSubtitle = ""
+pause.textHoverName = "Test 1"
+pause.textSubtitle = "Test 2"
 
 pause.leftX = love.graphics.getWidth()/2 - (56 * scale)
 pause.equipBoxGap = 6

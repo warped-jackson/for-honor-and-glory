@@ -77,20 +77,34 @@ function love.keypressed(key)
         sprites.playerSheet = love.graphics.newImage('sprites/player/playerSheet' .. data.outfit .. '.png')
     end
 
-    if key == 'lshift' or key == 'rshift' then
-        --player:interact()
-    end
-    ]]--
-
     if key == 'return' or key == 'tab' or key == 'e' then
         if gamestate == 1 then
             pause:toggle()
         end
     end
+    ]]--
 
     if key == 'space' then
-        if player.enableRoll then
-            player:roll()
+        if gamestate == 1 then
+            player:interact()
+        end
+    end
+
+    if love.keyboard.isDown("s") or love.keyboard.isDown("down") then
+        if talkies.isOpen() then
+            talkies.nextOption()
+        end
+    end
+
+    if love.keyboard.isDown("w") or love.keyboard.isDown("up") then
+        if talkies.isOpen() then
+            talkies.prevOption()
+        end
+    end
+
+    if love.keyboard.isDown("return") then
+        if talkies.isOpen() then
+            talkies.onAction()
         end
     end
 

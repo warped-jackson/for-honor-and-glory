@@ -1,4 +1,4 @@
-player = world:newBSGRectangleCollider(516, 196, 12, 12, 5)
+player = world:newBSGRectangleCollider(516, 196, 14, 14, 3)
 player.x = 0
 player.y = 0
 player.dir = "down"
@@ -29,7 +29,6 @@ player.baseDamping = 12
 player.dustTimer = 0
 player.rollDelayTimer = 0
 player.rotateMargin = 0.25
-player.enableRoll = false
 
 -- 0 = Normal gameplay
 -- 0.5 = Rolling
@@ -117,7 +116,8 @@ function player:update(dt)
         local dirX = 0
         local dirY = 0
 
-        if pause.active then return end
+        -- if pause.active or dialogShowing, then return end
+        if gamestate == 0 or talkies.isOpen() then return end
 
         if love.keyboard.isDown("d") or love.keyboard.isDown("right") then
             dirX = 1
@@ -718,7 +718,7 @@ function player:roll()
         return
     end
 
-    if pause.active then player:justIdle() return end
+    if pause.active or talkies.isOpen() then player:justIdle() return end
 
     local dirX = 0
     local dirY = 0

@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="20" height="30" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="10">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="20" height="30" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="13">
+ <editorsettings>
+  <export target="Room_KING.lua" format="lua"/>
+ </editorsettings>
  <tileset firstgid="1" name="inner" tilewidth="16" tileheight="16" tilecount="1000" columns="40">
   <image source="_tilesets/inner.png" width="640" height="400"/>
  </tileset>
@@ -112,18 +115,17 @@
   <object id="4" x="128" y="468" width="64" height="12"/>
   <object id="5" x="8" y="464" width="120" height="16"/>
   <object id="6" x="1" y="36" width="16" height="432"/>
-  <object id="7" x="-76" y="272"/>
  </objectgroup>
  <objectgroup id="6" name="NPC">
-  <object id="9" name="King" x="160" y="104">
+  <object id="10" name="king" x="160" y="88">
    <point/>
   </object>
  </objectgroup>
  <objectgroup id="5" name="Transitions">
-  <object id="8" name="toThe_outside" x="128" y="452" width="64" height="16">
+  <object id="8" name="toThe_outside" type="out" x="128" y="464" width="64" height="16">
    <properties>
-    <property name="destX" type="int" value="494"/>
-    <property name="destY" type="int" value="222"/>
+    <property name="destX" type="int" value="496"/>
+    <property name="destY" type="int" value="208"/>
    </properties>
   </object>
  </objectgroup>

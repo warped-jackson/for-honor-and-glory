@@ -12,6 +12,22 @@ function createNewSave(fileNumber)
     data.map = "" -- currently loaded map
     data.outfit = 1 -- which cloak is equipped
 
+    data.inventory = {}
+    data.inventory.healthPotion = 0
+    data.inventory.powerPotion = 0
+    data.inventory.deathPotion = 0
+
+    --[[
+    Dragon Quest Progress
+    0 - Quest not yet accepted
+    1 - Quest accpeted
+    2 - Encountered Dragon
+    3 - Potion Acquired, either Health or Death
+    4 - Dragon is Gone
+    5 - King Ends your quest
+    ]]--
+    data.dragonQuestState = 0
+
     if fileNumber == nil then fileNumber = 1 end
     data.fileNumber = fileNumber -- which file are we using
 
@@ -85,8 +101,8 @@ end
 
 function startFresh(fileNumber)
     createNewSave(fileNumber)
-    data.map = "world"
-    data.playerX = 40
-    data.playerY = 80
+    data.map = "Opening"
+    data.playerX = 13 * 16
+    data.playerY = 18 * 16
     player.state = 0
 end

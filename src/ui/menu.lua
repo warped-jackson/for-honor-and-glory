@@ -19,15 +19,17 @@ function menu:draw()
         love.graphics.printf("Press the Spacebar to start!", love.graphics.getWidth()/2 - 4000, 111 * scale, 8000, "center")
         ]]--
 
-        love.graphics.printf("Press Esc to close the game.", love.graphics.getWidth()/2 - 4000, 35 * scale, 8000, "center")
-        love.graphics.printf("Use WASD or Arrow Keys to move.", love.graphics.getWidth()/2 - 4000, 70 * scale, 8000, "center")
-        love.graphics.printf("Press the Spacebar to start!", love.graphics.getWidth()/2 - 4000, 105 * scale, 8000, "center")
+        love.graphics.printf("Press Esc to close the game.", love.graphics.getWidth()/2 - 4000, 20 * scale, 8000, "center")
+        love.graphics.printf("Use WASD or Arrow Keys to move.", love.graphics.getWidth()/2 - 4000, 45 * scale, 8000, "center")
+        love.graphics.printf("Use Spacebar to talk.", love.graphics.getWidth()/2 - 4000, 70 * scale, 8000, "center")
+        love.graphics.printf("Use Enter to complete talking.", love.graphics.getWidth()/2 - 4000, 95 * scale, 8000, "center")
+        love.graphics.printf("Press any key to start!", love.graphics.getWidth()/2 - 4000, 120 * scale, 8000, "center")
     end
 end
 
 function menu:select(key)
     if gamestate == 0 then
-        if key ~= "space" then return end
+        --if key ~= "tab" then return end
 
         startFresh(1)
 

@@ -96,6 +96,11 @@ sprites.pause.mouse = love.graphics.newImage('sprites/ui/pause/mouse.png')
 sprites.pause.cursor = love.graphics.newImage('sprites/ui/pause/cursor.png')
 sprites.npc = {}
 sprites.npc.merchant = love.graphics.newImage('sprites/npc/merchant.png')
+sprites.npc.heraldGerald = love.graphics.newImage('sprites/npc/merchant.png')
+sprites.npc.king = love.graphics.newImage('sprites/npc/king.png')
+sprites.npc.dragon = love.graphics.newImage('sprites/npc/dragon.png')
+sprites.npc.dragonDead = love.graphics.newImage('sprites/npc/dragon-dead.png')
+sprites.npc.undefined = love.graphics.newImage('sprites/npc/undefined.png')
 
 -- since fonts are influenced by scale, they need to be re-initialized when the scale changes
 function initFonts()
@@ -105,7 +110,7 @@ function initFonts()
     fonts.debugSmall = love.graphics.newFont("fonts/vt323/VT323-Regular.ttf", 10*scale)
     fonts.ammo = love.graphics.newFont("fonts/vt323/VT323-Regular.ttf", 9*scale)
     fonts.coins = love.graphics.newFont("fonts/vt323/VT323-Regular.ttf", 12*scale)
-    fonts.shop = love.graphics.newFont("fonts/vt323/VT323-Regular.ttf", 10*scale)
+    fonts.shop = love.graphics.newFont("fonts/vt323/VT323-Regular.ttf", 7*scale)
 
     fonts.pause1 = love.graphics.newFont("fonts/vt323/VT323-Regular.ttf", 12*scale)
     fonts.pause2 = love.graphics.newFont("fonts/vt323/VT323-Regular.ttf", 9*scale)

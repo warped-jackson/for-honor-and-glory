@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="20" height="30" tilewidth="16" tileheight="16" infinite="0" nextlayerid="8" nextobjectid="23">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="20" height="30" tilewidth="16" tileheight="16" infinite="0" nextlayerid="8" nextobjectid="25">
+ <editorsettings>
+  <export target="Opening.lua" format="lua"/>
+ </editorsettings>
  <tileset firstgid="1" name="overworld" tilewidth="16" tileheight="16" tilecount="1480" columns="40">
   <image source="_tilesets/overworld.png" width="640" height="592"/>
  </tileset>
@@ -58,18 +61,18 @@
 213,213,253,253,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,564,
 253,253,253,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,564,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,564,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,564,
-0,0,0,0,0,0,0,0,0,0,0,523,523,523,523,523,523,523,523,524,
-564,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,564,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,601,
+0,0,0,0,0,0,0,0,0,0,0,641,523,523,523,523,523,523,523,524,
+561,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,564,
 564,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,564,
 564,0,0,0,0,0,0,0,0,0,0,127,128,129,130,131,0,0,0,564,
 564,0,0,0,0,0,0,0,0,0,0,167,168,169,170,171,0,0,0,564,
-564,0,0,0,0,0,562,0,0,0,0,0,0,0,0,0,0,0,0,564,
+564,0,0,0,0,0,561,0,0,0,0,0,0,0,0,0,0,0,0,564,
 564,0,0,0,0,0,562,0,0,0,0,0,0,0,0,0,0,0,0,564,
 564,0,0,0,0,0,562,0,0,0,0,0,0,0,0,0,0,0,0,564,
 564,0,0,0,0,0,562,0,0,0,0,0,0,0,0,0,0,0,0,564,
 564,0,0,0,0,0,602,603,603,603,603,603,603,603,603,603,603,603,603,604,
-564,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,564,
+564,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,561,
 564,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,564,
 564,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,564,
 564,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,564,
@@ -125,18 +128,22 @@
   <object id="12" x="0" y="224" width="16" height="256"/>
   <object id="13" x="16" y="464" width="304" height="16"/>
   <object id="14" x="304" y="364" width="12" height="96"/>
-  <object id="15" x="304" y="364"/>
   <object id="16" x="304" y="96" width="16" height="112"/>
   <object id="17" x="4" y="84" width="316" height="12"/>
   <object id="18" x="160" y="100" width="48" height="12"/>
-  <object id="22" x="184" y="264" width="64" height="20"/>
+  <object id="22" x="184" y="256" width="64" height="28"/>
  </objectgroup>
  <objectgroup id="6" name="NPC">
-  <object id="1" name="Herald Gerald" x="164" y="276">
+  <object id="23" name="heraldGerald" x="168" y="272">
    <point/>
   </object>
  </objectgroup>
  <objectgroup id="7" name="Transitions">
-  <object id="20" name="From Home" x="0" y="100" width="16" height="124"/>
+  <object id="20" name="toMainOutside" type="left" x="-16" y="96" width="16" height="132">
+   <properties>
+    <property name="destX" type="int" value="784"/>
+    <property name="destY" type="int" value="544"/>
+   </properties>
+  </object>
  </objectgroup>
 </map>

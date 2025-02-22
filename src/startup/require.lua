@@ -39,12 +39,18 @@ function requireAll()
     require("src/items/grapple")
     require("src/items/chest")
 
+    require("src/npc/npc")
+    require("src/npc/potionMaster")
+    require("src/npc/king")
+    require("src/npc/heraldGerald")
+    require("src/npc/dragon")
+    require("src/npc/undefined")
+
     require("src/spells/fireball")
     require("src/spells/flame")
     
     require("src/levels/curtain")
     require("src/levels/loadMap")
-    require("src/levels/npc")
     require("src/levels/transition")
     require("src/levels/wall")
 

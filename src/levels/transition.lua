@@ -19,12 +19,16 @@ end
 function triggerTransition(id, destX, destY)
     local newMap = "test"
 
-    if id == "toWorld" then
-        newMap = "world"
-    elseif id == "toWorld2" then
-        newMap = "world2"
-    elseif id == "toCave" then
-        newMap = "cave"
+    if id == "toOpening" then
+        newMap = "Opening"
+    elseif id == "toMainOutside" then
+        newMap = "MainOutside"
+    elseif id == "toDragonLayer" then
+        newMap = "dragon_layer"
+    elseif id == "toThe_king" then
+        newMap = "Room_KING"
+    elseif id == "toThe_outside" then
+        newMap = "MainOutside"
     else
         newMap = id
     end

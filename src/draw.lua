@@ -65,5 +65,6 @@ function drawAfterCamera()
     curtain:draw()
     if gamestate == 0 then return end
     drawHUD()
+    talkies.draw()
     pause:draw()
 end
