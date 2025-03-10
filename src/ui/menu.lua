@@ -1,56 +1,76 @@
 menu = {}
 
+function newButton(text, fn)
+    return {
+        text = text,
+        fn = fn
+    }
+end
+
+local buttons = {}
+
+table.insert(buttons, newButton(
+    "Start Game",
+    function()
+        print("Starting game")
+    end)
+)
+
+table.insert(buttons, newButton(
+    "Settings",
+    function()
+        print("Settings Menu")
+    end)
+)
+
 function menu:draw()
+    local window_width = love.graphics.getWidth()
+    local window_height = love.graphics.getHeight()
+    local button_width = window_width * (1/3)
+    local button_height = window_height * (1/9)
+    local button_margin = 16
+    local cursor_y = 0
+    local total_height = (button_height + button_margin) * #buttons
+
     if gamestate == 0 then
         love.graphics.setFont(fonts.pause1)
-        love.graphics.setColor(1, 1, 1, 1)
 
-        --love.graphics.printf("1.  File #1", love.graphics.getWidth()/2 - 4000, 20 * scale, 8000, "center")
-        --love.graphics.printf("2.  File #2", love.graphics.getWidth()/2 - 4000, 30 * scale, 8000, "center")
-        --love.graphics.printf("3.  File #3", love.graphics.getWidth()/2 - 4000, 40 * scale, 8000, "center")
+        for i, button in ipairs(buttons) do
+            local button_x = (window_width * 0.5) - (button_width * 0.5)
+            local button_y = (window_height * 0.5) - (total_height * 0.5) + cursor_y
 
-        --[[
-        love.graphics.printf("Press BackSpace to toggle fullscreen.", love.graphics.getWidth()/2 - 4000, 10 * scale, 8000, "center")
-        love.graphics.printf("Press Esc to close the game.", love.graphics.getWidth()/2 - 4000, 22 * scale, 8000, "center")
-        love.graphics.printf("Use WASD or Arrow Keys to move.", love.graphics.getWidth()/2 - 4000, 47 * scale, 8000, "center")
-        love.graphics.printf("Press the Spacebar to roll.", love.graphics.getWidth()/2 - 4000, 59 * scale, 8000, "center")
-        love.graphics.printf("Press Tab or E to equip items.", love.graphics.getWidth()/2 - 4000, 71 * scale, 8000, "center")
-        love.graphics.printf("Use the mouse to aim and attack.", love.graphics.getWidth()/2 - 4000, 83 * scale, 8000, "center")
-        love.graphics.printf("Press the Spacebar to start!", love.graphics.getWidth()/2 - 4000, 111 * scale, 8000, "center")
-        ]]--
+            local color = {0.4,0.4,0.5,1}
+            local mouse_x, mouse_y = love.mouse.getPosition()
 
-        love.graphics.printf("Press Esc to close the game.", love.graphics.getWidth()/2 - 4000, 20 * scale, 8000, "center")
-        love.graphics.printf("Use WASD or Arrow Keys to move.", love.graphics.getWidth()/2 - 4000, 45 * scale, 8000, "center")
-        love.graphics.printf("Use Spacebar to talk.", love.graphics.getWidth()/2 - 4000, 70 * scale, 8000, "center")
-        love.graphics.printf("Use Enter to complete talking.", love.graphics.getWidth()/2 - 4000, 95 * scale, 8000, "center")
-        love.graphics.printf("Press any key to start!", love.graphics.getWidth()/2 - 4000, 120 * scale, 8000, "center")
-    end
-end
+            local hot = mouse_x > button_x and
+                        mouse_x < button_x + button_width and
+                        mouse_y > button_y and
+                        mouse_y < button_y + button_height
+             
+            if hot then
+                color = {8,8,9,1}
+            end
 
-function menu:select(key)
-    if gamestate == 0 then
-        --if key ~= "tab" then return end
+            love.graphics.setColor(unpack(color))
+            love.graphics.rectangle(
+                "fill",
+                button_x,
+                button_y,
+                button_width,
+                button_height
+            )
 
-        startFresh(1)
-
-        if data.map and string.len(data.map) > 0 then
-            curtain:call(data.map, data.playerX, data.playerY, "fade")
+            local text_width = fonts.pause1:getWidth(button.text)
+            local text_height = fonts.pause1:getHeight(button.text)
+            love.graphics.setColor(0.7, 0.7, 0.7, 1.0)
+            love.graphics.print(
+                button.text,
+                fonts.pause1,
+                (window_width * 0.5) - (text_width * 0.5),
+                (button_y - button_margin) + text_height * 0.5
+            )
+            cursor_y = cursor_y + (button_height + button_margin)
         end
-
-        return
-
     end
-
-    -- Testing destinations (be sure to remove!)
-    --[[
-    if key == "1" then
-        loadMap("test")
-    elseif key == "2" then
-        loadMap("test5")
-    elseif key == "3" then
-        loadMap("test2")
-    elseif key == "4" then
-        loadMap("testDungeon2", 408, 494)
-    end
-    ]]
 end
+
