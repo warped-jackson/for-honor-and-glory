@@ -42,7 +42,7 @@ function spawnNPC(x, y, type, args)
     -- Wall spawned overtop of the npc, passed npc as parent
     spawnWall(npc.collisionX, npc.collisionY, npc.width, npc.height, nil, nil, npc)
 
-    function npc:update(dt)
+    function npc:update_generic(dt)
     end
 
     table.insert(npcs, npc)
@@ -51,13 +51,14 @@ end
 function npcs:update(dt)
     for _,n in ipairs(npcs) do
         n:update(dt)
+        n:update_generic(dt)
     end
 end
 
 function npcs:draw(layer)
     love.graphics.setColor(1,1,1,1)
     for _,n in ipairs(npcs) do
-        love.graphics.draw(n.sprite, n.x, n.y)
+        n:draw()
     end
 end
 

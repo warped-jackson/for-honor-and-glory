@@ -343,8 +343,8 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["destX"] = 496,
-            ["destY"] = 208
+            ["destX"] = 479,
+            ["destY"] = 245
           }
         }
       }

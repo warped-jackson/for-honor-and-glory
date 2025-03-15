@@ -1,5 +1,11 @@
 function drawBeforeCamera()
-    menu:draw()
+    if gamestate == 0 then
+        menu:draw()
+    end
+
+    if gamestate == 1 then
+        instructions:draw()
+    end
 end
 
 function drawCamera()

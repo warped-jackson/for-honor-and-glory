@@ -1,7 +1,9 @@
 function drawHUD()
-    --drawHearts()
-    --drawItemBox()
-    --drawMoney()
+    if gamestate == 10 then
+        --drawHearts()
+        --drawItemBox()
+        --drawMoney()
+    end
 end
 
 function drawHearts()

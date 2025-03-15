@@ -96,7 +96,7 @@ function loadGame(fileNumber)
     --loadMap(data.map, data.playerX, data.playerY)
     player.direction = "down"
     --player.state = 0
-    --gamestate = 1
+    --gamestate = 10
 end
 
 function startFresh(fileNumber)

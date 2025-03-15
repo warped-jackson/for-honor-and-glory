@@ -79,6 +79,13 @@ local function potionMasterInit(npc, x, y, args)
         end
     end
 
+    function npc:update(dt)
+    end
+
+    function npc:draw()
+        love.graphics.draw(npc.sprite, npc.x, npc.y)
+    end
+
     return npc
 end
 

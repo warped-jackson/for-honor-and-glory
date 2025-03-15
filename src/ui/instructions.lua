@@ -1,4 +1,4 @@
-menu = {}
+instructions = {}
 
 function newButton(text, fn)
     return {
@@ -12,65 +12,31 @@ end
 local buttons = {}
 
 table.insert(buttons, newButton(
-    "Start Game",
+    "Back",
     function()
-        startFresh(1)
-
-        if data.map and string.len(data.map) > 0 then
-            curtain:call(data.map, data.playerX, data.playerY, "fade")
-        end
+        gamestate = 0
+        menu:draw()
     end)
 )
 
-table.insert(buttons, newButton(
-    "Settings",
-    function()
-        gamestate = 1
-        instructions:draw()
-    end)
-)
-
-function menu:draw()
+function instructions:draw()
     local window_width = love.graphics.getWidth()
     local window_height = love.graphics.getHeight()
     local button_width = window_width * (1/3)
     local button_height = window_height * (1/9)
     local button_margin = 16
-    local cursor_y = 0
+    local cursor_y = 300
     local total_height = (button_height + button_margin) * #buttons
 
-    if gamestate == 0 then
-
-        background_scale = 1.6
-        background_width = sprites.startScreenBackground:getWidth() * background_scale
-        background_height = sprites.startScreenBackground:getHeight() * background_scale
-
-        love.graphics.draw(sprites.startScreenBackground,
-                           (window_width - background_width) * 0.5,
-                           (window_height - background_height) * 0.5,
-                           nil,
-                           background_scale,
-                           background_scale)
-
-        local color = {128/255, 0/255, 0/255, 196/255}
-        love.graphics.setColor(unpack(color))
-        love.graphics.rectangle(
-            "fill",
-            (window_width - background_width) * 0.5,
-            (window_height - background_height) * 0.5,
-            background_width,
-            background_height * 0.22
-        )
-
-        local color = {184/255, 134/255, 11/255, 255/255}
-        love.graphics.setColor(unpack(color))
-        love.graphics.setFont(fonts.title)
-        love.graphics.printf("For Honor and Glory", love.graphics.getWidth()/2 - 4000, 3 * scale, 8000, "center")
-
-        local color = {0/255, 0/255, 0/255, 255/255}
-        love.graphics.setColor(unpack(color))
-
+    if gamestate == 1 then
         love.graphics.setFont(fonts.pause1)
+        love.graphics.setColor(255/255, 255/255, 255/255, 255/255)
+
+        love.graphics.printf("Use Arrow Keys or WASD to move.", love.graphics.getWidth()/2 - 4000, 20 * scale, 8000, "center")
+        love.graphics.printf("Use Spacebar to talk or select dialog option.", love.graphics.getWidth()/2 - 4000, 45 * scale, 8000, "center")
+        love.graphics.printf("Use Up and Down Arrow Keys to change selection while talking.", love.graphics.getWidth()/2 - 4000, 70 * scale, 8000, "center")
+        love.graphics.printf("Press Esc to close the game.", love.graphics.getWidth()/2 - 4000, 95 * scale, 8000, "center")
+
         for i, button in ipairs(buttons) do
             button.last = button.now
             local button_x = (window_width * 0.5) - (button_width * 0.5)
@@ -119,4 +85,3 @@ function menu:draw()
         end
     end
 end
-

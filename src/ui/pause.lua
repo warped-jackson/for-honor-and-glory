@@ -318,11 +318,11 @@ end
 function pause:draw()
     if self.active then
         love.graphics.setColor(0,0,0,0.7 * pause.alpha)
+        love.graphics.rectangle("fill", -10, -10, love.graphics.getWidth() + 20, love.graphics.getHeight() + 20)
         --[[
         -- Use only the bottom 1/3rd of the screen
-        love.graphics.rectangle("fill", -10, -10, love.graphics.getWidth() + 20, love.graphics.getHeight() + 20)
-        ]]--
         love.graphics.rectangle("fill", -10, (love.graphics.getHeight()*2)/3, love.graphics.getWidth() + 20, love.graphics.getHeight() + 20)
+        ]]--
 
         love.graphics.setColor(1,1,1,pause.alpha)
 

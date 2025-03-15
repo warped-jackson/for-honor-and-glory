@@ -1,8 +1,15 @@
  local function kingInit(npc, x, y, args)
-    npc.sprite = sprites.npc.king
+    npc.sprite = sprites.npc.kingSheet
     npc.width = 25
     npc.height = 33
-    npc.collsionY = npc.y + 6
+    npc.x = x
+    npc.y = y
+    npc.x_offset = npc.width / 2
+    npc.y_offset = npc.height / 2
+
+    npc.has_animations = true
+    npc.grid = anim8.newGrid(npc.width, npc.height, npc.sprite:getWidth(), npc.sprite:getHeight())
+    npc.anim = anim8.newAnimation(npc.grid('1-4', 1), {2.4, 0.1, 2.8, 0.1})
 
     function npc:interact()
         if talkies.isOpen() then return end
@@ -30,6 +37,15 @@
             )
             data.dragonQuestState = 5
         end
+    end
+
+    function npc:update(dt)
+        npc.anim:update(dt)
+    end
+
+    function npc:draw()
+        love.graphics.draw(sprites.npc.kingShadow, npc.x, npc.y, nil, nil, nil, npc.x_offset, npc.y_offset - npc.height + 5)
+        npc.anim:draw(sprites.npc.kingSheet, npc.x, npc.y, nil, nil, nil, npc.x_offset, npc.y_offset)
     end
 
     return npc

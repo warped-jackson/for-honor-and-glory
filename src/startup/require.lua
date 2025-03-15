@@ -56,6 +56,7 @@ function requireAll()
 
     require("src/ui/hud")
     require("src/ui/menu")
+    require("src/ui/instructions")
     require("src/ui/pause")
 
 end

@@ -22,7 +22,7 @@ function triggerTransition(id, destX, destY)
     if id == "toOpening" then
         newMap = "Opening"
     elseif id == "toMainOutside" then
-        newMap = "MainOutside"
+        newMap = "openzone"
     elseif id == "toDragonLayer" then
         newMap = "dragon_layer"
     elseif id == "toThe_king" then
@@ -33,7 +33,7 @@ function triggerTransition(id, destX, destY)
         newMap = id
     end
 
-    gamestate = 1
+    gamestate = 10
     player:setPosition(destX, destY)
 
     loadMap(newMap)

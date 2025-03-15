@@ -124,8 +124,8 @@
  <objectgroup id="5" name="Transitions">
   <object id="8" name="toThe_outside" type="out" x="128" y="464" width="64" height="16">
    <properties>
-    <property name="destX" type="int" value="496"/>
-    <property name="destY" type="int" value="208"/>
+    <property name="destX" type="int" value="479"/>
+    <property name="destY" type="int" value="245"/>
    </properties>
   </object>
  </objectgroup>
