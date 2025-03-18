@@ -10,7 +10,7 @@ function love.load()
     createNewSave()
 
     loadMap("menu")
- 
+
     dj.volume("effect", 1)
 
 end

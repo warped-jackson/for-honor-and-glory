@@ -33,7 +33,7 @@ function about:draw()
         love.graphics.setColor(255/255, 255/255, 255/255, 255/255)
 
         love.graphics.printf("Welcome to For Honor and Glory", love.graphics.getWidth()/2 - 4000, 10 * scale, 8000, "center")
-        love.graphics.printf("You are The Mage, the wisened warlock tasked", love.graphics.getWidth()/2 - 4000, 35 * scale, 8000, "center")
+        love.graphics.printf("You are The Mage, the wise magician tasked", love.graphics.getWidth()/2 - 4000, 35 * scale, 8000, "center")
         love.graphics.printf("to resolve the issues facing the kingdom. It is up", love.graphics.getWidth()/2 - 4000, 55 * scale, 8000, "center")
         love.graphics.printf("to you to decide how to resolve the conflicts that arise", love.graphics.getWidth()/2 - 4000, 75 * scale, 8000, "center")
         love.graphics.printf("How will you choose?", love.graphics.getWidth()/2 - 4000, 95 * scale, 8000, "center")

@@ -88,7 +88,7 @@ function player:update(dt)
             player:setLinearVelocity(0, 0)
         end
     end
-    
+
     if player.damagedTimer > 0 then
         player.damagedTimer = player.damagedTimer - dt
         player.damagedFlashTime = player.damagedFlashTime - dt
@@ -113,7 +113,7 @@ function player:update(dt)
 
         player.prevDirX = player.dirX
         player.prevDirY = player.dirY
-    
+
         local dirX = 0
         local dirY = 0
 
@@ -289,12 +289,12 @@ function player:update(dt)
             player:resetAnimation(player.dir)
             player.aiming = false
         end
-    
+
     elseif player.state == 3 then
 
         -- while drawing the bow back, always 'use' the item
         player:useItem(player.bowRecoveryTime)
-    
+
     elseif player.state == 4 or player.state == 4.1 then
 
         -- while arming the grapple, always 'use' the item
@@ -323,7 +323,7 @@ function player:update(dt)
             player:resetAnimation(player.dir)
             player.drawOnTop = false
         end
-    
+
     elseif player.state == 11.1 then -- got an item (delay)
 
         player.animTimer = player.animTimer - dt
@@ -701,7 +701,12 @@ function player:gotItem(spr, delay)
     player.holdSprite = spr
     player.state = 11
     player.animTimer = 3
-    player.dir = "down"
+    player.dirX = 1
+    if player.dir == "down" then
+        player.dirY = 1
+    else
+        player.dirY = -1
+    end
     player.anim = player.animations.hold
     player:setLinearVelocity(0, 0)
 end

@@ -4,10 +4,15 @@ function spawnNPC(x, y, type, args)
     local npc = {}
     npc.width = 16
     npc.height = 24
+    -- Move the NPC so that the x and y position that was passed become the bottom middle of the sprite
     npc.x = x - (npc.width/2)
-    npc.y = y - (npc.height/2)
+    npc.y = y - npc.height
+    -- By default, the collision box around the NPC is the same as the full width and height of the sprite
     npc.collisionX = npc.x
     npc.collisionY = npc.y
+    npc.collisionWidth = npc.width
+    npc.collisionHeight = npc.height
+
     npc.type = type
     npc.layer = -1
     npc.sprite = sprites.enemies.eye1
@@ -36,11 +41,11 @@ function spawnNPC(x, y, type, args)
 
     -- if NPC is behind a counter, increase height of the collision by one tile
     if npc.behindCounter == true then
-        npc.height = npc.height + 16
+        npc.collisionHeight = npc.collisionHeight + 16
     end
 
     -- Wall spawned overtop of the npc, passed npc as parent
-    spawnWall(npc.collisionX, npc.collisionY, npc.width, npc.height, nil, nil, npc)
+    spawnWall(npc.collisionX, npc.collisionY, npc.collisionWidth, npc.collisionHeight, nil, nil, npc)
 
     function npc:update_generic(dt)
     end

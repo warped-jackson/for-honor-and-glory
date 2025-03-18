@@ -2,6 +2,10 @@ local function potionMasterInit(npc, x, y, args)
     npc.sprite = sprites.npc.merchant
 
     npc.inventory = {}
+    npc.inventory.healingPotion = 0
+    npc.inventory.powerPotion = 0
+    npc.inventory.deathPotion = 0
+    npc.inventory.invisibilityPotion = 0
 
     if args.healingPotionQty then
         npc.inventory.healingPotion = args.healingPotionQty
@@ -24,21 +28,21 @@ local function potionMasterInit(npc, x, y, args)
 
         local potionOptions = {{'Nothing right now', function () npc:getPotion("nothing") end}}
 
-        if self.inventory.healingPotion > 0 then
+        if npc.inventory.healingPotion > 0 then
             table.insert(potionOptions, {'Elixir of Healing', function () npc:getPotion("healing") end})
         end
 
-        if self.inventory.powerPotion > 0 then
+        if npc.inventory.powerPotion > 0 then
             table.insert(potionOptions, {'Potion of Power', function () npc:getPotion("power") end})
         end
 
-        if self.inventory.deathPotion > 0 then
+        if npc.inventory.deathPotion > 0 then
             table.insert(potionOptions, {'Draught of Death', function () npc:getPotion("death") end})
         end
 
-        if ( self.inventory.healingPotion > 0 ) or
-           ( self.inventory.powerPotion > 0 ) or
-           ( self.inventory.deathPotion > 0 )
+        if ( npc.inventory.healingPotion > 0 ) or
+           ( npc.inventory.powerPotion > 0 ) or
+           ( npc.inventory.deathPotion > 0 )
         then
             talkies.say(
                 "The Potion Master",
@@ -69,7 +73,7 @@ local function potionMasterInit(npc, x, y, args)
                 "The Potion Master",
                 "Thank you for buying the Elixir of Healing. Please stop by again."
             )
-            self.inventory.healingPotion = self.inventory.healingPotion - 1
+            npc.inventory.healingPotion = npc.inventory.healingPotion - 1
             data.inventory.healingPotion = data.inventory.healingPotion + 1
             player:gotItem(sprites.inventory.healingPotion)
         end
@@ -79,7 +83,7 @@ local function potionMasterInit(npc, x, y, args)
                 "The Potion Master",
                 "Thank you for buying the Potion of Power. Please stop by again."
             )
-            self.inventory.powerPotion = self.inventory.powerPotion - 1
+            npc.inventory.powerPotion = npc.inventory.powerPotion - 1
             data.inventory.powerPotion = data.inventory.powerPotion + 1
             player:gotItem(sprites.inventory.powerPotion)
         end
@@ -89,7 +93,7 @@ local function potionMasterInit(npc, x, y, args)
                 "The Potion Master",
                 "Thank you for buying the Draught of Death. Please be careful with that and stop by again."
             )
-            self.inventory.deathPotion = self.inventory.deathPotion - 1
+            npc.inventory.deathPotion = npc.inventory.deathPotion - 1
             data.inventory.deathPotion = data.inventory.deathPotion + 1
             player:gotItem(sprites.inventory.deathPotion)
         end

@@ -118,7 +118,7 @@ function initFonts()
     fonts.ammo = love.graphics.newFont("fonts/vt323/VT323-Regular.ttf", 13*scale)
     fonts.coins = love.graphics.newFont("fonts/vt323/VT323-Regular.ttf", 18*scale)
     fonts.shop = love.graphics.newFont("fonts/vt323/VT323-Regular.ttf", 12*scale)
-    fonts.score = love.graphics.newFont("fonts/vt323/VT323-Regular.ttf", 7*scale)
+    fonts.score = love.graphics.newFont("fonts/vt323/VT323-Regular.ttf", 10*scale)
 
     fonts.title = love.graphics.newFont("fonts/blackchancery/BLKCHCRY.TTF", 32*scale)
     fonts.pause1 = love.graphics.newFont("fonts/vt323/VT323-Regular.ttf", 15*scale)
@@ -150,3 +150,11 @@ sounds.ui.click = 'sounds/ui/click.wav'
 sounds.ui.select = 'sounds/ui/select.wav'
 sounds.ui.menuOpen = 'sounds/ui/menu-open.wav'
 sounds.ui.menuClose = 'sounds/ui/menu-close.wav'
+sounds.music = {}
+sounds.music.overworld = 'sounds/Overworld.mp3'
+sounds.music.town = 'sounds/Town.mp3'
+sounds.music.castle = 'sounds/Castle.mp3'
+sounds.music.cave = 'sounds/Cave.mp3'
+sounds.score = {}
+sounds.score.positive = 'sounds/ui/positive.wav'
+sounds.score.negative = 'sounds/ui/negative.wav'

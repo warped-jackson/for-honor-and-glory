@@ -18,7 +18,7 @@ function gameStart()
     setWindowSize(fullscreen, 800, 600)
 
     if vertical then
-        fullscreen = false
+        fullscreen = true
         testWindow = true
         setWindowSize(fullscreen, 1360, 1920)
     end

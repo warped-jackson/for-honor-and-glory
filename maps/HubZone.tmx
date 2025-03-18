@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="50" height="50" tilewidth="16" tileheight="16" infinite="0" nextlayerid="9" nextobjectid="53">
+<map version="1.10" tiledversion="1.11.1" orientation="orthogonal" renderorder="right-down" width="50" height="50" tilewidth="16" tileheight="16" infinite="0" nextlayerid="9" nextobjectid="53">
  <editorsettings>
   <export target="HubZone.lua" format="lua"/>
  </editorsettings>
@@ -187,8 +187,8 @@
   <object id="18" x="41" y="410" width="28" height="28"/>
   <object id="19" x="345" y="201" width="28" height="28"/>
   <object id="20" x="61" y="261" width="28" height="28"/>
-  <object id="21" x="416" y="288" width="76" height="24"/>
-  <object id="22" x="480" y="268" width="12" height="44"/>
+  <object id="21" x="416" y="288" width="80" height="28"/>
+  <object id="22" x="480" y="268" width="16" height="20"/>
   <object id="23" x="0" y="84" width="32" height="44"/>
   <object id="24" x="32" y="96" width="92" height="16"/>
   <object id="25" x="272" y="80" width="76" height="16"/>
@@ -210,7 +210,13 @@
   <object id="51" x="680" y="432" width="40" height="4"/>
  </objectgroup>
  <objectgroup id="7" name="NPC">
-  <object id="11" name="potionMaster" x="456" y="284">
+  <object id="11" name="potionMaster" x="456" y="296">
+   <properties>
+    <property name="behindCounter" type="bool" value="true"/>
+    <property name="deathPotionQty" type="int" value="1"/>
+    <property name="healingPotionQty" type="int" value="1"/>
+    <property name="powerPotionQty" type="int" value="1"/>
+   </properties>
    <point/>
   </object>
   <object id="34" x="676" y="16" width="20" height="12"/>

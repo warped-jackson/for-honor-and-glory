@@ -1,7 +1,7 @@
 return {
   version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.11.2",
+  tiledversion = "1.11.1",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -509,8 +509,8 @@ return {
           shape = "rectangle",
           x = 416,
           y = 288,
-          width = 76,
-          height = 24,
+          width = 80,
+          height = 28,
           rotation = 0,
           visible = true,
           properties = {}
@@ -522,8 +522,8 @@ return {
           shape = "rectangle",
           x = 480,
           y = 268,
-          width = 12,
-          height = 44,
+          width = 16,
+          height = 20,
           rotation = 0,
           visible = true,
           properties = {}
@@ -797,12 +797,17 @@ return {
           type = "",
           shape = "point",
           x = 456,
-          y = 284,
+          y = 296,
           width = 0,
           height = 0,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["behindCounter"] = true,
+            ["deathPotionQty"] = 1,
+            ["healingPotionQty"] = 1,
+            ["powerPotionQty"] = 1
+          }
         },
         {
           id = 34,

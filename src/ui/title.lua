@@ -31,7 +31,7 @@ table.insert(buttons, newButton(
 )
 
 table.insert(buttons, newButton(
-    "Controls",
+    "How to Play",
     function()
         gamestate = 2
         controls:draw()

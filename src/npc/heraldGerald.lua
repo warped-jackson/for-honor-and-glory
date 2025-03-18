@@ -1,8 +1,15 @@
  local function heraldGeraldinit(npc, x, y, args)
     npc.sprite = sprites.npc.heraldGerald
-    npc.width = 14
-    npc.height = 20
-    npc.y = y - (npc.height/2) - 2
+    npc.width = 16
+    npc.height = 24
+
+    npc.x = x - (npc.width/2)
+    npc.y = y - npc.height
+
+    npc.collisionX = npc.x
+    npc.collisionY = npc.y
+    npc.collisionWidth = npc.width
+    npc.collisionHeight = npc.height
 
     function npc:interact()
         if talkies.isOpen() then return end

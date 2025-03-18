@@ -12,6 +12,7 @@ function createNewSave(fileNumber)
     data.map = "" -- currently loaded map
     data.outfit = 1 -- which cloak is equipped
     data.score = 0
+    data.music = ""
 
     data.inventory = {}
     data.inventory.healingPotion = 0
@@ -37,8 +38,9 @@ function createNewSave(fileNumber)
     1 - Quest accpeted
     2 - Encountered Dragon
     3 - Potion Acquired, either Health or Death
-    4 - Dragon is Gone
-    5 - King Ends your quest
+    4 - Dragon is Healed
+    5 - Dragon is Dead
+    6 - King Ends your quest
     ]]--
     data.quest.dragon = {}
     data.quest.dragon.state = 0
@@ -80,7 +82,7 @@ function saveGame()
         love.filesystem.write("file3.lua", table.show(data, "data"))
     end
 end
-  
+
 function loadGame(fileNumber)
     if fileNumber == 1 then
         if love.filesystem.getInfo("file1.lua") ~= nil then
@@ -120,4 +122,6 @@ function startFresh(fileNumber)
     data.playerX = 23 * 16
     data.playerY = 18 * 16
     player.state = 0
+    dj.playLooping(sounds.music.overworld, "stream", {"music", "overworld"})
+    dj.volume("music", 0.6)
 end

@@ -5,14 +5,33 @@ local function dragonInit(npc, x, y, args)
     end
 
     npc.sprite = sprites.npc.dragon
+
+    -- The width and height refer to the head, which is where the player interacts with the dragon
     npc.width = 80
     npc.height = 48
 
-    npc.collisionX = npc.x + 16
-    npc.collisionY = npc.y + 112
+    -- The full_width and full_height refer to the full sprite, since the player only interacts with
+    -- the head of the dragon
+    npc.full_width = 192
+    npc.full_height = 160
+
+    npc.overhangBufferLeft = 18
+    npc.overhangBufferRight = 32
+    npc.overhangBufferTop = 32
+    npc.overhangBufferBottom = 0
+    npc.overhangBufferHorizontal = npc.overhangBufferLeft + npc.overhangBufferRight
+    npc.overhangBufferVertical = npc.overhangBufferTop + npc.overhangBufferBottom
+
+    npc.collisionX = npc.x - (npc.width/2) + 18
+    npc.collisionY = npc.y - npc.height
+    npc.collisionWidth = npc.width
+    npc.collisionHeight = npc.height
+
+    npc.x_offset = npc.width / 2
+    npc.y_offset = npc.full_height
 
     -- Wall spawned overtop of the npc, passed nil as parent
-   spawnWall(npc.x + 16, npc.y, 176, 160, nil, nil, nil)
+   spawnWall(npc.x - npc.x_offset + npc.overhangBufferLeft, npc.y - npc.y_offset + npc.overhangBufferTop, npc.full_width - npc.overhangBufferHorizontal, npc.full_height - npc.overhangBufferVertical, nil, nil, nil)
 
     function npc:interact()
         if talkies.isOpen() then return end
@@ -82,6 +101,7 @@ local function dragonInit(npc, x, y, args)
             )
             data.inventory.healingPotion = data.inventory.healingPotion - 1
             data.quest.dragon.state = 4
+            updateScore(3)
         end
 
         if type == "death" then
@@ -91,7 +111,8 @@ local function dragonInit(npc, x, y, args)
             )
             data.inventory.deathPotion = data.inventory.deathPotion - 1
             npc.sprite = sprites.npc.dragonDead
-            data.quest.dragon.state = 4
+            data.quest.dragon.state = 5
+            updateScore(-5)
         end
     end
 
@@ -99,7 +120,7 @@ local function dragonInit(npc, x, y, args)
     end
 
     function npc:draw()
-        love.graphics.draw(npc.sprite, npc.x, npc.y)
+        love.graphics.draw(npc.sprite, npc.x, npc.y, nil, nil, nil, npc.x_offset, npc.y_offset)
     end
 
     return npc

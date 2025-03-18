@@ -1,13 +1,19 @@
  local function kingInit(npc, x, y, args)
-    npc.sprite = sprites.npc.kingSheet
+    npc.spritesheet = sprites.npc.kingSheet
     npc.width = 25
     npc.height = 33
     npc.x = x
     npc.y = y
-    npc.x_offset = npc.width / 2
-    npc.y_offset = npc.height / 2
 
-    npc.grid = anim8.newGrid(npc.width, npc.height, npc.sprite:getWidth(), npc.sprite:getHeight())
+    npc.x = x - (npc.width/2)
+    npc.y = y - npc.height
+
+    npc.collisionX = npc.x
+    npc.collisionY = npc.y
+    npc.collisionWidth = npc.width
+    npc.collisionHeight = npc.height + 5
+
+    npc.grid = anim8.newGrid(npc.width, npc.height, npc.spritesheet:getWidth(), npc.spritesheet:getHeight())
     npc.anim = anim8.newAnimation(npc.grid('1-4', 1), {2.4, 0.1, 2.8, 0.1})
 
     function npc:interact()
@@ -19,11 +25,11 @@
                 "The King",
                 "There you are Mage. I am glad you got my message..."
             )
+            updateScore(-1)
             talkies.say(
                 "The King",
                 "You say you didn't get my message from Herald Gerald, who was waiting outside your house? That's not good."
             )
-            data.score = data.score - 1
             talkies.say(
                 "The King",
                 "Anyways, now that you are here, I have something important to discuss with you."
@@ -44,7 +50,7 @@
                     "The King",
                     "Thank you Mage for seeing me so quickly!"
                 )
-                data.score = data.score + 1
+                updateScore(1)
             elseif deltaTime < 300 then
                 talkies.say(
                     "The King",
@@ -55,7 +61,7 @@
                     "The King",
                     "Mage, you have kept your King waiting!"
                 )
-                data.score = data.score - 2
+                updateScore(-2)
             end
             data.quest.king.state = 2
         end
@@ -82,12 +88,25 @@
             )
         end
 
-        if data.quest.dragon.state == 4 or data.quest.dragon.state == 5 then
+        if data.quest.dragon.state == 4 then
             talkies.say(
                 "The King",
-                "Thank you so much for saving the kingdom. Thank you for playing the 'For Honor And Glory' demo"
+                "Thank you so much for saving the kingdom. That wasn't quite the solution I had in mind, but you got rid of the dragon either way. Thank you for playing the 'For Honor And Glory' demo"
             )
-            data.quest.dragon.state = 5
+            updateScore(2)
+            data.quest.dragon.state = 6
+        elseif data.quest.dragon.state == 5 then
+            talkies.say(
+                "The King",
+                "Thank you so much for saving the kingdom."
+            )
+            updateScore(3)
+            data.quest.dragon.state = 6
+        elseif data.quest.dragon.state == 6 then
+            talkies.say(
+                "The King",
+                "Thank you for playing the 'For Honor And Glory' demo"
+            )
         end
     end
 
@@ -96,8 +115,8 @@
     end
 
     function npc:draw()
-        love.graphics.draw(sprites.npc.kingShadow, npc.x, npc.y, nil, nil, nil, npc.x_offset, npc.y_offset - npc.height + 5)
-        npc.anim:draw(sprites.npc.kingSheet, npc.x, npc.y, nil, nil, nil, npc.x_offset, npc.y_offset)
+        love.graphics.draw(sprites.npc.kingShadow, npc.x, npc.y + npc.height, nil, nil, nil, nil, 15)
+        npc.anim:draw(sprites.npc.kingSheet, npc.x, npc.y)
     end
 
     return npc

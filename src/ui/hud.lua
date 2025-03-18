@@ -7,6 +7,15 @@ function drawHUD()
     end
 end
 
+function updateScore(value)
+    if value > 0 then
+        dj.play(sounds.score.positive, 'static')
+    else
+        dj.play(sounds.score.negative, 'static')
+    end
+    data.score = data.score + value
+end
+
 function drawForHonorGloryBar()
     local bar = {}
 
@@ -18,7 +27,7 @@ function drawForHonorGloryBar()
     bar.sprite = sprites.hud.forHonorAndGloryBarSheet
     bar.width = 206
     bar.height = 28
-    bar.x = 18*scale
+    bar.x = 28*scale
     bar.y = 3*scale
     bar.grid = anim8.newGrid(bar.width, bar.height, bar.sprite:getWidth(), bar.sprite:getHeight())
     bar.animation = {}
