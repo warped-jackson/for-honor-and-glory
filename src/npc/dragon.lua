@@ -1,5 +1,5 @@
 local function dragonInit(npc, x, y, args)
-    if data.dragonQuestState == 4 then
+    if data.quest.dragon.state == 4 then
         npc.gone = true
         return npc
     end
@@ -16,44 +16,44 @@ local function dragonInit(npc, x, y, args)
 
     function npc:interact()
         if talkies.isOpen() then return end
-        
-        if data.dragonQuestState == 0 then
+
+        if data.quest.dragon.state == 0 then
             talkies.say(
                 "Sleeping Dragon",
                 "zzzzzzzz"
             )
         end
 
-        if data.dragonQuestState == 1 then
+        if data.quest.dragon.state == 1 then
             talkies.say(
                 "The Crimson Dragon",
                 "The King has called for you to go see him, and to get rid of me? But I dont feel so good, Mage. I feel (sniffle, sniffle) sick."
             )
-            data.dragonQuestState = 2
+            data.quest.dragon.state = 2
         end
 
-        if data.dragonQuestState == 2 then
+        if data.quest.dragon.state == 2 then
             talkies.say(
                 "The Crimson Dragon",
                 "GrUmBlE uMbLe. I could really go for a health potion right about now."
             )
-            if data.inventory.healthPotion > 0 or data.inventory.deathPotion > 0 then
-                data.dragonQuestState = 3
+            if data.inventory.healingPotion > 0 or data.inventory.deathPotion > 0 then
+                data.quest.dragon.state = 3
             end
         end
 
-        if data.dragonQuestState == 3 then
+        if data.quest.dragon.state == 3 then
 
             potionOptions = {{'Don\'t give the dragon anything', function () npc:givePotion("nothing") end}}
 
-            if data.inventory.healthPotion > 0 then
+            if data.inventory.healingPotion > 0 then
                 table.insert(potionOptions, {'Give the Dragon an Elixir of Healing', function () npc:givePotion("healing") end})
             end
             if data.inventory.deathPotion > 0 then
                 table.insert(potionOptions, {'Give the Dragon a Draught of Death', function () npc:givePotion("death") end})
             end
 
-            if ( data.inventory.healthPotion > 0 ) or
+            if ( data.inventory.healingPotion > 0 ) or
                ( data.inventory.deathPotion > 0 )
             then
                 talkies.say(
@@ -80,10 +80,10 @@ local function dragonInit(npc, x, y, args)
                 "The Crimson Dragon",
                 "Thank you. I am starting to feel better already.\n\nWhen I am all better, I shall leave this kingdom."
             )
-            data.inventory.healthPotion = data.inventory.healthPotion - 1
-            data.dragonQuestState = 4
+            data.inventory.healingPotion = data.inventory.healingPotion - 1
+            data.quest.dragon.state = 4
         end
-        
+
         if type == "death" then
             talkies.say(
                 "The Crimson Dragon",
@@ -91,7 +91,7 @@ local function dragonInit(npc, x, y, args)
             )
             data.inventory.deathPotion = data.inventory.deathPotion - 1
             npc.sprite = sprites.npc.dragonDead
-            data.dragonQuestState = 4
+            data.quest.dragon.state = 4
         end
     end
 

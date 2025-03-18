@@ -1,10 +1,14 @@
 function drawBeforeCamera()
     if gamestate == 0 then
-        menu:draw()
+        title:draw()
     end
 
     if gamestate == 1 then
-        instructions:draw()
+        about:draw()
+    end
+
+    if gamestate == 2 then
+        controls:draw()
     end
 end
 
@@ -41,7 +45,9 @@ function drawCamera()
     grapple:draw(-1)
     effects:draw(0)
     trees:draw(-1)
-    player:draw()
+    if player.drawOnTop == false then
+        player:draw()
+    end
     chests:draw(1)
     arrows:draw(1)
     fireballs:draw(1)
@@ -64,6 +70,10 @@ function drawCamera()
 
     if gameMap.layers["Overhangs"] then
         gameMap:drawLayer(gameMap.layers["Overhangs"])
+    end
+
+    if player.drawOnTop == true then
+        player:draw()
     end
 end
 

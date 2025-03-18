@@ -78,6 +78,10 @@ sprites.items.chestClosed = love.graphics.newImage('sprites/environment/chestClo
 sprites.items.chestOpen = love.graphics.newImage('sprites/environment/chestOpen.png')
 sprites.items.chestBigClosed = love.graphics.newImage('sprites/environment/chestBigClosed.png')
 sprites.items.chestBigOpen = love.graphics.newImage('sprites/environment/chestBigOpen.png')
+sprites.inventory = {}
+sprites.inventory.powerPotion = love.graphics.newImage('sprites/inventory/powerPotion.png')
+sprites.inventory.healingPotion = love.graphics.newImage('sprites/inventory/healingPotion.png')
+sprites.inventory.deathPotion = love.graphics.newImage('sprites/inventory/deathPotion.png')
 sprites.hud = {}
 sprites.hud.heart = love.graphics.newImage('sprites/ui/heart.png')
 sprites.hud.halfHeart = love.graphics.newImage('sprites/ui/heart-half.png')
@@ -85,6 +89,7 @@ sprites.hud.emptyHeart = love.graphics.newImage('sprites/ui/heart-empty.png')
 sprites.hud.itemBox = love.graphics.newImage('sprites/ui/itemBox.png')
 sprites.hud.ammoBox = love.graphics.newImage('sprites/ui/ammoBox.png')
 sprites.hud.coin = love.graphics.newImage('sprites/items/coinIcon.png')
+sprites.hud.forHonorAndGloryBarSheet = love.graphics.newImage('sprites/ui/HonorGloryBar.png')
 sprites.pause = {}
 sprites.pause.equipBox = love.graphics.newImage('sprites/ui/pause/equipBox.png')
 sprites.pause.wideBox = love.graphics.newImage('sprites/ui/pause/wideBox.png')
@@ -107,17 +112,18 @@ sprites.startScreenBackground = love.graphics.newImage('sprites/ui/start-screen.
 -- since fonts are influenced by scale, they need to be re-initialized when the scale changes
 function initFonts()
     fonts = {}
-    fonts.debug = love.graphics.newFont("fonts/vt323/VT323-Regular.ttf", 15*scale)
-    fonts.debug2 = love.graphics.newFont(10*scale)
-    fonts.debugSmall = love.graphics.newFont("fonts/vt323/VT323-Regular.ttf", 10*scale)
-    fonts.ammo = love.graphics.newFont("fonts/vt323/VT323-Regular.ttf", 9*scale)
-    fonts.coins = love.graphics.newFont("fonts/vt323/VT323-Regular.ttf", 12*scale)
-    fonts.shop = love.graphics.newFont("fonts/vt323/VT323-Regular.ttf", 10*scale)
+    fonts.debug = love.graphics.newFont("fonts/vt323/VT323-Regular.ttf", 22*scale)
+    fonts.debug2 = love.graphics.newFont(15*scale)
+    fonts.debugSmall = love.graphics.newFont("fonts/vt323/VT323-Regular.ttf", 15*scale)
+    fonts.ammo = love.graphics.newFont("fonts/vt323/VT323-Regular.ttf", 13*scale)
+    fonts.coins = love.graphics.newFont("fonts/vt323/VT323-Regular.ttf", 18*scale)
+    fonts.shop = love.graphics.newFont("fonts/vt323/VT323-Regular.ttf", 12*scale)
+    fonts.score = love.graphics.newFont("fonts/vt323/VT323-Regular.ttf", 7*scale)
 
-    fonts.title = love.graphics.newFont("fonts/blackchancery/BLKCHCRY.TTF", 24*scale)
-    fonts.pause1 = love.graphics.newFont("fonts/vt323/VT323-Regular.ttf", 12*scale)
-    fonts.pause2 = love.graphics.newFont("fonts/vt323/VT323-Regular.ttf", 9*scale)
-    fonts.pauseTop = love.graphics.newFont("fonts/vt323/VT323-Regular.ttf", 10*scale)
+    fonts.title = love.graphics.newFont("fonts/blackchancery/BLKCHCRY.TTF", 32*scale)
+    fonts.pause1 = love.graphics.newFont("fonts/vt323/VT323-Regular.ttf", 15*scale)
+    fonts.pause2 = love.graphics.newFont("fonts/vt323/VT323-Regular.ttf", 12*scale)
+    fonts.pauseTop = love.graphics.newFont("fonts/vt323/VT323-Regular.ttf", 15*scale)
 end
 initFonts()
 

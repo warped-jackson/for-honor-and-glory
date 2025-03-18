@@ -178,7 +178,7 @@ function pause:equip(key)
     elseif pause.hoverIndex == -12 then -- right
         pause:unequip('right')
     end
-    
+
     pause:updateEquipped()
 
 end
@@ -356,9 +356,9 @@ function pause:draw()
         end
         ]]--
 
+        --[[
         local cy = love.graphics.getHeight()/2
 
-        --[[
         -- Text at the bottom
         love.graphics.setFont(fonts.pauseTop)
         love.graphics.printf("Left or Right Click on an item to equip it", love.graphics.getWidth()/2 - 4000, self.y + (cy - 68 * pause.scale), 8000, "center")
@@ -366,10 +366,10 @@ function pause:draw()
         love.graphics.printf(pause.textHoverName, love.graphics.getWidth()/2 - 4000, self.y + (cy + 48 * pause.scale), 8000, "center")
         love.graphics.setFont(fonts.pause2)
         love.graphics.printf(pause.textSubtitle, love.graphics.getWidth()/2 - 4000, self.y + (cy + 60 * pause.scale), 8000, "center")
-        ]]--
 
         love.graphics.draw(sprites.hud.coin, love.graphics.getWidth() - 27*scale, self.y + (139 * pause.scale), nil, 1.5*scale)
         love.graphics.setFont(fonts.coins)
         love.graphics.print(data.money, love.graphics.getWidth() - 16*scale, self.y + (138 * pause.scale))
+        ]]--
     end
 end

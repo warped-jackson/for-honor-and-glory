@@ -1,4 +1,4 @@
-instructions = {}
+about = {}
 
 function newButton(text, fn)
     return {
@@ -15,11 +15,11 @@ table.insert(buttons, newButton(
     "Back",
     function()
         gamestate = 0
-        menu:draw()
+        title:draw()
     end)
 )
 
-function instructions:draw()
+function about:draw()
     local window_width = love.graphics.getWidth()
     local window_height = love.graphics.getHeight()
     local button_width = window_width * (1/3)
@@ -32,10 +32,11 @@ function instructions:draw()
         love.graphics.setFont(fonts.pause1)
         love.graphics.setColor(255/255, 255/255, 255/255, 255/255)
 
-        love.graphics.printf("Use Arrow Keys or WASD to move.", love.graphics.getWidth()/2 - 4000, 20 * scale, 8000, "center")
-        love.graphics.printf("Use Spacebar to talk or select dialog option.", love.graphics.getWidth()/2 - 4000, 45 * scale, 8000, "center")
-        love.graphics.printf("Use Up and Down Arrow Keys to change selection while talking.", love.graphics.getWidth()/2 - 4000, 70 * scale, 8000, "center")
-        love.graphics.printf("Press Esc to close the game.", love.graphics.getWidth()/2 - 4000, 95 * scale, 8000, "center")
+        love.graphics.printf("Welcome to For Honor and Glory", love.graphics.getWidth()/2 - 4000, 10 * scale, 8000, "center")
+        love.graphics.printf("You are The Mage, the wisened warlock tasked", love.graphics.getWidth()/2 - 4000, 35 * scale, 8000, "center")
+        love.graphics.printf("to resolve the issues facing the kingdom. It is up", love.graphics.getWidth()/2 - 4000, 55 * scale, 8000, "center")
+        love.graphics.printf("to you to decide how to resolve the conflicts that arise", love.graphics.getWidth()/2 - 4000, 75 * scale, 8000, "center")
+        love.graphics.printf("How will you choose?", love.graphics.getWidth()/2 - 4000, 95 * scale, 8000, "center")
 
         for i, button in ipairs(buttons) do
             button.last = button.now

@@ -29,6 +29,7 @@ player.baseDamping = 12
 player.dustTimer = 0
 player.rollDelayTimer = 0
 player.rotateMargin = 0.25
+player.drawOnTop = false
 
 -- 0 = Normal gameplay
 -- 0.5 = Rolling
@@ -60,7 +61,7 @@ player.animations.useDownRight = anim8.newAnimation(player.grid(2, 1), player.an
 player.animations.useDownLeft = anim8.newAnimation(player.grid(2, 1), player.animSpeed)
 player.animations.useUpRight = anim8.newAnimation(player.grid(2, 2), player.animSpeed)
 player.animations.useUpLeft = anim8.newAnimation(player.grid(2, 2), player.animSpeed)
-player.animations.hold = anim8.newAnimation(player.grid(1, 1), player.animSpeed)
+player.animations.hold = anim8.newAnimation(player.grid(1, 3), player.animSpeed)
 player.animations.rollDown = anim8.newAnimation(player.grid('1-3', 4), 0.11)
 player.animations.rollUp = anim8.newAnimation(player.grid('1-3', 5), 0.11)
 player.animations.stopDown = anim8.newAnimation(player.grid('1-3', 6), 0.22, function() player.anim = player.animations.idleDown end)
@@ -311,6 +312,7 @@ function player:update(dt)
 
         player:setX( player:getX() + (grapple.dir.x * grapple.speed * dt) )
         player:setY( player:getY() + (grapple.dir.y * grapple.speed * dt) )
+    ]]--
 
     elseif player.state == 11 then -- got an item
 
@@ -319,6 +321,7 @@ function player:update(dt)
         if player.animTimer < 0 then
             player.state = 0
             player:resetAnimation(player.dir)
+            player.drawOnTop = false
         end
     
     elseif player.state == 11.1 then -- got an item (delay)
@@ -328,7 +331,6 @@ function player:update(dt)
         if player.animTimer < 0 then
             player:gotItem(player.holdSprite)
         end
-    ]]--
 
     elseif player.state == 12 then -- transition
 
@@ -434,11 +436,12 @@ function player:draw()
         if data.arrowCount > 0 and player.animTimer <= 0 then love.graphics.draw(arrowSpr, px + bowOffX, py + bowOffY, bowRot, 0.85, nil, arrowSpr:getWidth()/2, arrowSpr:getHeight()/2) end
         --love.graphics.draw(hookSpr, px + hookOffX, py + hookOffY, bowRot, 1.15, nil, hookSpr:getWidth()/2, hookSpr:getHeight()/2)
     end
+    ]]--
 
     if player.state == 11 then
-        love.graphics.draw(player.holdSprite, player:getX(), player:getY()-18, nil, nil, nil, player.holdSprite:getWidth()/2, player.holdSprite:getHeight()/2)
+        player.drawOnTop = true
+        love.graphics.draw(player.holdSprite, player:getX()+10, player:getY()-10, nil, nil, nil, player.holdSprite:getWidth()/2, player.holdSprite:getHeight()/2)
     end
-    ]]--
 
 end
 
@@ -579,7 +582,7 @@ function player:useItem(duration)
         player:setLinearVelocity(0, 0)
     end
 
-    --[[if player.dir == "down" then
+    if player.dir == "down" then
         player.anim = player.animations.useDown
     elseif player.dir == "up" then
         player.anim = player.animations.useUp
@@ -587,7 +590,7 @@ function player:useItem(duration)
         player.anim = player.animations.useRight
     elseif player.dir == "left" then
         player.anim = player.animations.useLeft
-    end]]
+    end
 
     if player.dirX == 1 then
         if player.dirY == 1 then
@@ -671,6 +674,7 @@ end
 
 function player:resetAnimation(direction)
     --player.anim = player.animations[direction]
+    player.drawOnTop = false
     if player.dirX == 1 then
         if player.dirY == 1 then
             player.anim = player.animations.idleDown
@@ -696,7 +700,7 @@ function player:gotItem(spr, delay)
     end
     player.holdSprite = spr
     player.state = 11
-    player.animTimer = 1
+    player.animTimer = 3
     player.dir = "down"
     player.anim = player.animations.hold
     player:setLinearVelocity(0, 0)

@@ -73,16 +73,18 @@ function initGlobals()
 
     -- game state
     -- 0: main menu
-    -- 1: gameplay
+    -- 1: about game
+    -- 2: controls menu
+    -- 10: gameplay
     gamestate = 0
     globalStun = 0
 end
 
 function setScale(input)
-    scale = (7.3 / 1200) * windowHeight
+    scale = (7.3 / 1200 * 0.75) * windowHeight
 
     if vertical then
-        scale = (7 / 1200) * windowHeight
+        scale = (7 / 1200 * 0.75) * windowHeight
     end
 
     if cam then

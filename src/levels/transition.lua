@@ -21,14 +21,14 @@ function triggerTransition(id, destX, destY)
 
     if id == "toOpening" then
         newMap = "Opening"
-    elseif id == "toMainOutside" then
-        newMap = "openzone"
+    elseif id == "toHubZone" then
+        newMap = "HubZone"
+    elseif id == "toTown" then
+        newMap = "Town"
+    elseif id == "toCastle" then
+        newMap = "Castle"
     elseif id == "toDragonLayer" then
-        newMap = "dragon_layer"
-    elseif id == "toThe_king" then
-        newMap = "Room_KING"
-    elseif id == "toThe_outside" then
-        newMap = "MainOutside"
+        newMap = "DragonLayer"
     else
         newMap = id
     end

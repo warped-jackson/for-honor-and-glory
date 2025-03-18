@@ -7,10 +7,21 @@
     function npc:interact()
         if talkies.isOpen() then return end
 
-        talkies.say(
-            "Herald Gerald",
-            "The King has called for you go see him. He is wating in his castle at the TOP of the kingdom. Good Luck Mage."
-        )
+        if data.quest.king.state == 0 then
+            talkies.say(
+                "Herald Gerald",
+                "The King has called for you go see him. Move with haste, the King is waiting. Good luck Mage."
+            )
+            data.quest.king.state = 1
+            data.quest.king.startTime = os.time()
+        end
+
+        if data.quest.king.state == 1 then
+            talkies.say(
+                "Herald Gerald",
+                "Do NOT keep the King waiting."
+            )
+        end
     end
 
     function npc:update(dt)

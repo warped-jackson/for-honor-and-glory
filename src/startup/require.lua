@@ -55,8 +55,9 @@ function requireAll()
     require("src/levels/wall")
 
     require("src/ui/hud")
-    require("src/ui/menu")
-    require("src/ui/instructions")
+    require("src/ui/title")
+    require("src/ui/about")
+    require("src/ui/controls")
     require("src/ui/pause")
 
 end

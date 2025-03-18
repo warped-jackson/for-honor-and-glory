@@ -1,4 +1,4 @@
-menu = {}
+title = {}
 
 function newButton(text, fn)
     return {
@@ -23,25 +23,40 @@ table.insert(buttons, newButton(
 )
 
 table.insert(buttons, newButton(
-    "Settings",
+    "About Game",
     function()
         gamestate = 1
-        instructions:draw()
+        about:draw()
     end)
 )
 
-function menu:draw()
+table.insert(buttons, newButton(
+    "Controls",
+    function()
+        gamestate = 2
+        controls:draw()
+    end)
+)
+
+table.insert(buttons, newButton(
+    "Quit",
+    function()
+        love.event.quit()
+    end)
+)
+
+function title:draw()
     local window_width = love.graphics.getWidth()
     local window_height = love.graphics.getHeight()
     local button_width = window_width * (1/3)
     local button_height = window_height * (1/9)
-    local button_margin = 16
-    local cursor_y = 0
+    local button_margin = 3 * scale
+    local cursor_y = 30 * scale
     local total_height = (button_height + button_margin) * #buttons
 
     if gamestate == 0 then
 
-        background_scale = 1.6
+        background_scale = window_height / sprites.startScreenBackground:getHeight()
         background_width = sprites.startScreenBackground:getWidth() * background_scale
         background_height = sprites.startScreenBackground:getHeight() * background_scale
 

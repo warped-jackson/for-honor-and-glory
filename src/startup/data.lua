@@ -11,11 +11,25 @@ function createNewSave(fileNumber)
     data.keys = 0 -- number of keys
     data.map = "" -- currently loaded map
     data.outfit = 1 -- which cloak is equipped
+    data.score = 0
 
     data.inventory = {}
-    data.inventory.healthPotion = 0
+    data.inventory.healingPotion = 0
     data.inventory.powerPotion = 0
     data.inventory.deathPotion = 0
+
+    data.quest = {}
+
+    --[[
+    To the King Quest Progress
+    0 - Not yet received the message from Herald Gerald
+    1 - First meeting with the King
+    2 - End of the quest, on to the Dragon Quest
+    ]]--
+    data.quest.king={}
+    data.quest.king.state = 0
+    data.quest.king.startTime = nil
+    data.quest.king.endTime = nil
 
     --[[
     Dragon Quest Progress
@@ -26,7 +40,8 @@ function createNewSave(fileNumber)
     4 - Dragon is Gone
     5 - King Ends your quest
     ]]--
-    data.dragonQuestState = 0
+    data.quest.dragon = {}
+    data.quest.dragon.state = 0
 
     if fileNumber == nil then fileNumber = 1 end
     data.fileNumber = fileNumber -- which file are we using

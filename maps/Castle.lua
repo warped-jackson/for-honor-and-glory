@@ -248,19 +248,6 @@ return {
           properties = {}
         },
         {
-          id = 4,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 128,
-          y = 468,
-          width = 64,
-          height = 12,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        },
-        {
           id = 5,
           name = "",
           type = "",
@@ -333,7 +320,7 @@ return {
       objects = {
         {
           id = 8,
-          name = "toThe_outside",
+          name = "toTown",
           type = "out",
           shape = "rectangle",
           x = 128,

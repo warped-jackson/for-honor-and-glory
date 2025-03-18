@@ -654,8 +654,8 @@ return {
           name = "dragon",
           type = "",
           shape = "point",
-          x = 180,
-          y = 132,
+          x = 200,
+          y = 280,
           width = 0,
           height = 0,
           rotation = 0,
@@ -680,7 +680,7 @@ return {
       objects = {
         {
           id = 2,
-          name = "toMainOutside",
+          name = "toHubZone",
           type = "Out",
           shape = "rectangle",
           x = 236,
