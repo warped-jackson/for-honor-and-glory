@@ -44,7 +44,7 @@ function love.keypressed(key)
     end
 
     if key == 'q' then
-        --colliderToggle = not (colliderToggle and true);
+        colliderToggle = not (colliderToggle and true);
     end
 
     if key == 'escape' then

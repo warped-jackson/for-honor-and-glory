@@ -117,7 +117,7 @@ end
 function startFresh(fileNumber)
     createNewSave(fileNumber)
     data.map = "Opening"
-    data.playerX = 13 * 16
+    data.playerX = 23 * 16
     data.playerY = 18 * 16
     player.state = 0
 end

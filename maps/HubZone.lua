@@ -836,7 +836,7 @@ return {
         {
           id = 30,
           name = "toTown",
-          type = "",
+          type = "up",
           shape = "rectangle",
           x = 452,
           y = 64,
@@ -868,7 +868,7 @@ return {
         {
           id = 48,
           name = "toOpening",
-          type = "",
+          type = "right",
           shape = "rectangle",
           x = 800,
           y = 412,

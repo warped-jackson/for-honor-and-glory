@@ -196,8 +196,8 @@
  <objectgroup id="5" name="Transitions">
   <object id="2" name="toHubZone" type="Out" x="236" y="720" width="24" height="8">
    <properties>
-    <property name="destX" type="int" value="215"/>
-    <property name="destY" type="int" value="710"/>
+    <property name="destX" type="int" value="136"/>
+    <property name="destY" type="int" value="122"/>
    </properties>
   </object>
  </objectgroup>
