@@ -1,7 +1,7 @@
  local function heraldGeraldinit(npc, x, y, args)
     npc.sprite = sprites.npc.heraldGerald
-    npc.width = 16
-    npc.height = 24
+    npc.width = 32
+    npc.height = 35
 
     npc.x = x - (npc.width/2)
     npc.y = y - npc.height
@@ -35,6 +35,7 @@
     end
 
     function npc:draw()
+        love.graphics.draw(sprites.npc.kingShadow, npc.x, npc.y + npc.height, nil, nil, nil, -2, 4)
         love.graphics.draw(npc.sprite, npc.x, npc.y)
     end
 

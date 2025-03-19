@@ -10,7 +10,7 @@ return {
   tilewidth = 16,
   tileheight = 16,
   nextlayerid = 8,
-  nextobjectid = 76,
+  nextobjectid = 77,
   properties = {},
   tilesets = {
     {
@@ -560,8 +560,8 @@ return {
           name = "heraldGerald",
           type = "",
           shape = "point",
-          x = 328,
-          y = 284,
+          x = 240,
+          y = 272,
           width = 0,
           height = 0,
           rotation = 0,
