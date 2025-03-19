@@ -19,15 +19,19 @@ end
 function drawForHonorGloryBar()
     local bar = {}
 
-    setWhite()
+    if data.score < 0 then
+        setRed()
+    else
+        setWhite()
+    end
     love.graphics.setFont(fonts.score)
-    love.graphics.printf("Score", 4*scale, 4*scale, 25*scale, "left")
+    love.graphics.printf("Score: "..data.score*10, 12*scale, 4*scale, 40*scale, "left")
     setWhite()
 
     bar.sprite = sprites.hud.forHonorAndGloryBarSheet
     bar.width = 206
     bar.height = 28
-    bar.x = 28*scale
+    bar.x = 54*scale
     bar.y = 3*scale
     bar.grid = anim8.newGrid(bar.width, bar.height, bar.sprite:getWidth(), bar.sprite:getHeight())
     bar.animation = {}

@@ -118,7 +118,7 @@ function initFonts()
     fonts.ammo = love.graphics.newFont("fonts/vt323/VT323-Regular.ttf", 13*scale)
     fonts.coins = love.graphics.newFont("fonts/vt323/VT323-Regular.ttf", 18*scale)
     fonts.shop = love.graphics.newFont("fonts/vt323/VT323-Regular.ttf", 12*scale)
-    fonts.score = love.graphics.newFont("fonts/vt323/VT323-Regular.ttf", 10*scale)
+    fonts.score = love.graphics.newFont("fonts/vt323/VT323-Regular.ttf", 12*scale)
 
     fonts.title = love.graphics.newFont("fonts/blackchancery/BLKCHCRY.TTF", 32*scale)
     fonts.pause1 = love.graphics.newFont("fonts/vt323/VT323-Regular.ttf", 15*scale)

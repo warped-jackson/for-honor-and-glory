@@ -79,6 +79,14 @@ function setWhite()
     love.graphics.setColor(1, 1, 1, 1)
 end
 
+function setRed()
+    love.graphics.setColor(1, 0, 0, 1)
+end
+
+function setBlack()
+    love.graphics.setColor(0, 0, 0, 1)
+end
+
 function midpoint(x1, y1, x2, y2)
     local p = {}
     p.x = (x1+x2)/2;
