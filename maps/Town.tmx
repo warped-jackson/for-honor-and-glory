@@ -224,7 +224,7 @@
  <objectgroup id="7" name="Transitions">
   <object id="11" name="toCastle" x="456" y="220" width="44" height="12">
    <properties>
-    <property name="destX" type="int" value="160"/>
+    <property name="destX" type="int" value="240"/>
     <property name="destY" type="int" value="440"/>
    </properties>
   </object>

@@ -91,7 +91,7 @@
         if data.quest.dragon.state == 4 then
             talkies.say(
                 "The King",
-                "Thank you so much for saving the kingdom. That wasn't quite the solution I had in mind, but you got rid of the dragon either way. Thank you for playing the 'For Honor And Glory' demo"
+                "Thank you so much for saving the kingdom. That wasn't quite the solution I had in mind, but you got rid of the dragon either way."
             )
             updateScore(2)
             data.quest.dragon.state = 6
@@ -105,7 +105,7 @@
         elseif data.quest.dragon.state == 6 then
             talkies.say(
                 "The King",
-                "Thank you for playing the 'For Honor And Glory' demo"
+                "Thank you for playing 'For Honor And Glory'"
             )
         end
     end
@@ -115,7 +115,7 @@
     end
 
     function npc:draw()
-        love.graphics.draw(sprites.npc.kingShadow, npc.x, npc.y + npc.height, nil, nil, nil, nil, 15)
+        love.graphics.draw(sprites.npc.kingShadow, npc.x, npc.y + npc.height, nil, nil, nil, nil, 4)
         npc.anim:draw(sprites.npc.kingSheet, npc.x, npc.y)
     end
 

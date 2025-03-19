@@ -151,6 +151,7 @@ sounds.ui.select = 'sounds/ui/select.wav'
 sounds.ui.menuOpen = 'sounds/ui/menu-open.wav'
 sounds.ui.menuClose = 'sounds/ui/menu-close.wav'
 sounds.music = {}
+sounds.music.titleScreen = 'sounds/TitleScreen.mp3'
 sounds.music.overworld = 'sounds/Overworld.mp3'
 sounds.music.town = 'sounds/Town.mp3'
 sounds.music.castle = 'sounds/Castle.mp3'

@@ -23,7 +23,7 @@ table.insert(buttons, newButton(
 )
 
 table.insert(buttons, newButton(
-    "About Game",
+    "About the Game",
     function()
         gamestate = 1
         about:draw()
@@ -35,6 +35,13 @@ table.insert(buttons, newButton(
     function()
         gamestate = 2
         controls:draw()
+    end)
+)
+
+table.insert(buttons, newButton(
+    "Source Code",
+    function()
+        os.execute('xdg-open https://github.com/warped-jackson/for-honor-and-glory')
     end)
 )
 
@@ -51,8 +58,9 @@ function title:draw()
     local button_width = window_width * (1/3)
     local button_height = window_height * (1/9)
     local button_margin = 3 * scale
-    local cursor_y = 30 * scale
+    local cursor_y = 20 * scale
     local total_height = (button_height + button_margin) * #buttons
+
 
     if gamestate == 0 then
 
@@ -131,7 +139,9 @@ function title:draw()
 
             local color = {255/255, 255/255, 255/255, 255/255}
             love.graphics.setColor(unpack(color))
+
         end
     end
 end
 
+dj.playLooping(sounds.music.titleScreen, "stream", {"music", "title"})
