@@ -31,7 +31,7 @@ function drawForHonorGloryBar()
     bar.sprite = sprites.hud.forHonorAndGloryBarSheet
     bar.width = 206
     bar.height = 28
-    bar.x = 54*scale
+    bar.x = 60*scale
     bar.y = 3*scale
     bar.grid = anim8.newGrid(bar.width, bar.height, bar.sprite:getWidth(), bar.sprite:getHeight())
     bar.animation = {}
