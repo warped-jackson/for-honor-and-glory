@@ -132,6 +132,7 @@ sounds.enemies = {}
 sounds.enemies.die = 'sounds/enemies/enemyDie.wav'
 sounds.enemies.hurt = 'sounds/enemies/enemyHurt.wav'
 sounds.enemies.projectile = 'sounds/enemies/projectile.wav'
+sounds.inventory = 'sounds/Inventory.wav'
 sounds.items = {}
 sounds.items.arrow = 'sounds/items/arrow.wav'
 sounds.items.boomerang = 'sounds/items/boomerang.wav'

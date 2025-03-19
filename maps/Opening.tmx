@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="30" tilewidth="16" tileheight="16" infinite="0" nextlayerid="8" nextobjectid="75">
+<map version="1.10" tiledversion="1.11.1" orientation="orthogonal" renderorder="right-down" width="30" height="30" tilewidth="16" tileheight="16" infinite="0" nextlayerid="8" nextobjectid="76">
  <editorsettings>
   <export target="Opening.lua" format="lua"/>
  </editorsettings>
@@ -63,8 +63,8 @@
 686,687,686,687,686,687,686,687,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,686,688,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,683,685,685,685,685,685,685,685,685,685,685,684,646,648,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,725,0,0,0,0,0,0,0,0,0,0,725,686,688,
-646,647,646,647,646,647,646,647,0,0,0,0,0,0,0,0,725,0,0,0,0,0,0,0,0,0,0,725,646,648,
-648,688,648,688,648,688,648,687,0,0,0,0,0,0,0,0,725,0,0,0,0,0,0,0,0,0,0,725,686,688,
+646,647,646,647,646,647,0,0,0,0,0,0,0,0,0,0,725,0,0,0,0,0,0,0,0,0,0,725,646,648,
+648,688,648,688,648,688,647,0,0,0,0,0,0,0,0,0,725,0,0,0,0,0,0,0,0,0,0,725,686,688,
 688,648,688,648,688,648,688,647,0,0,0,0,0,0,0,0,721,0,0,0,0,127,128,177,130,131,0,725,646,648,
 648,688,648,688,648,688,648,688,647,0,0,0,0,0,0,0,0,0,0,0,0,167,168,217,170,171,0,725,686,688,
 688,648,688,648,688,648,688,648,688,647,406,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,725,646,648,
@@ -123,42 +123,22 @@
   <object id="13" x="192" y="384" width="240" height="16"/>
   <object id="22" x="344" y="232" width="64" height="52"/>
   <object id="26" x="0" y="176" width="128" height="16"/>
-  <object id="27" x="0" y="232" width="96" height="40"/>
-  <object id="29" x="96" y="232" width="32" height="56"/>
+  <object id="27" x="0" y="224" width="96" height="16"/>
+  <object id="29" x="112" y="256" width="16" height="16"/>
   <object id="30" x="260" y="208" width="8" height="64"/>
   <object id="31" x="432" y="368" width="32" height="32"/>
   <object id="32" x="436" y="208" width="8" height="148"/>
-  <object id="33" x="440" y="160" width="8" height="16"/>
-  <object id="34" x="328" y="144" width="120" height="16"/>
-  <object id="35" x="144" y="128" width="192" height="16"/>
-  <object id="36" x="128" y="144" width="24" height="16"/>
-  <object id="37" x="112" y="160" width="24" height="16"/>
-  <object id="38" x="128" y="272" width="16" height="64"/>
-  <object id="39" x="144" y="288" width="16" height="48"/>
-  <object id="40" x="160" y="304" width="16" height="32"/>
+  <object id="34" x="320" y="144" width="128" height="16"/>
+  <object id="35" x="160" y="128" width="160" height="16"/>
+  <object id="36" x="144" y="144" width="16" height="16"/>
+  <object id="37" x="128" y="160" width="16" height="16"/>
+  <object id="38" x="128" y="272" width="16" height="16"/>
+  <object id="39" x="144" y="288" width="16" height="16"/>
+  <object id="40" x="160" y="304" width="16" height="16"/>
   <object id="41" x="176" y="320" width="16" height="48"/>
   <object id="42" x="176" y="368" width="32" height="16"/>
-  <object id="44" x="320" y="144" width="8" height="8"/>
-  <object id="45" x="324" y="152" width="4" height="4"/>
-  <object id="46" x="432" y="160" width="8" height="8"/>
-  <object id="47" x="436" y="168" width="4" height="4"/>
-  <object id="49" x="152" y="144" width="8" height="8"/>
-  <object id="50" x="152" y="152" width="4" height="4"/>
-  <object id="52" x="136" y="160" width="8" height="8"/>
-  <object id="53" x="136" y="168" width="4" height="4"/>
-  <object id="54" x="128" y="176" width="4" height="4"/>
-  <object id="58" x="104" y="224" width="16" height="8"/>
-  <object id="63" x="120" y="228" width="4" height="4"/>
-  <object id="64" x="100" y="228" width="4" height="4"/>
-  <object id="65" x="72" y="224" width="16" height="8"/>
-  <object id="66" x="88" y="228" width="4" height="4"/>
-  <object id="67" x="68" y="228" width="4" height="4"/>
-  <object id="68" x="40" y="224" width="16" height="8"/>
-  <object id="69" x="56" y="228" width="4" height="4"/>
-  <object id="70" x="36" y="228" width="4" height="4"/>
-  <object id="71" x="8" y="224" width="16" height="8"/>
-  <object id="72" x="24" y="228" width="4" height="4"/>
-  <object id="73" x="4" y="228" width="4" height="4"/>
+  <object id="58" x="96" y="240" width="16" height="16"/>
+  <object id="75" x="432" y="160" width="16" height="16"/>
  </objectgroup>
  <objectgroup id="6" name="NPC">
   <object id="23" name="heraldGerald" x="328" y="284">
@@ -166,7 +146,7 @@
   </object>
  </objectgroup>
  <objectgroup id="7" name="Transitions">
-  <object id="20" name="toHubZone" type="left" x="-16" y="192" width="16" height="40">
+  <object id="20" name="toHubZone" type="left" x="-16" y="192" width="16" height="32">
    <properties>
     <property name="destX" type="int" value="788"/>
     <property name="destY" type="int" value="422"/>

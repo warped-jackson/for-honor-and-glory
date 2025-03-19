@@ -707,6 +707,8 @@ function player:gotItem(spr, delay)
     else
         player.dirY = -1
     end
+    dj.volume("inventory", 1)
+    dj.play(sounds.inventory, "static", "inventory")
     player.anim = player.animations.hold
     player:setLinearVelocity(0, 0)
 end
