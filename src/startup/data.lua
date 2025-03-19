@@ -122,6 +122,7 @@ function startFresh(fileNumber)
     data.playerX = 23 * 16
     data.playerY = 18 * 16
     player.state = 0
+    dj.stop("title")
     dj.playLooping(sounds.music.overworld, "stream", {"music", "overworld"})
     dj.volume("music", 0.6)
 end
