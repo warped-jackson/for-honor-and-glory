@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="45" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="53">
+<map version="1.10" tiledversion="1.11.1" orientation="orthogonal" renderorder="right-down" width="30" height="45" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="54">
  <editorsettings>
-  <export format="lua"/>
+  <export target="DragonLayer.lua" format="lua"/>
  </editorsettings>
  <tileset firstgid="1" name="dragons_lair" tilewidth="16" tileheight="16" tilecount="160" columns="16">
   <image source="_tilesets/cave.png" width="256" height="160"/>
@@ -196,8 +196,8 @@
  <objectgroup id="5" name="Transitions">
   <object id="2" name="toHubZone" type="Out" x="236" y="720" width="24" height="8">
    <properties>
-    <property name="destX" type="int" value="136"/>
-    <property name="destY" type="int" value="122"/>
+    <property name="destX" type="int" value="24"/>
+    <property name="destY" type="int" value="200"/>
    </properties>
   </object>
  </objectgroup>

@@ -1,7 +1,7 @@
 return {
   version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.11.2",
+  tiledversion = "1.11.1",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -10,7 +10,7 @@ return {
   tilewidth = 16,
   tileheight = 16,
   nextlayerid = 7,
-  nextobjectid = 53,
+  nextobjectid = 54,
   properties = {},
   tilesets = {
     {
@@ -690,8 +690,8 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["destX"] = 136,
-            ["destY"] = 122
+            ["destX"] = 24,
+            ["destY"] = 200
           }
         }
       }
