@@ -1,5 +1,5 @@
 local function dragonInit(npc, x, y, args)
-    if data.quest.dragon.state == 4 then
+    if data.quest.dragon.state > 4 then
         npc.gone = true
         return npc
     end
