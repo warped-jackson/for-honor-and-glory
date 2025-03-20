@@ -25,7 +25,7 @@
                 "The King",
                 "There you are Mage. I am glad you got my message..."
             )
-            updateScore(-1)
+            updateScore(-10)
             talkies.say(
                 "The King",
                 "You say you didn't get my message from Herald Gerald, who was waiting outside your house? That's not good."
@@ -50,7 +50,7 @@
                     "The King",
                     "Thank you Mage for seeing me so quickly!"
                 )
-                updateScore(1)
+                updateScore(10)
             elseif deltaTime < 300 then
                 talkies.say(
                     "The King",
@@ -61,7 +61,7 @@
                     "The King",
                     "Mage, you have kept your King waiting!"
                 )
-                updateScore(-2)
+                updateScore(-20)
             end
             data.quest.king.state = 2
         end
@@ -93,14 +93,14 @@
                 "The King",
                 "Thank you so much for saving the kingdom. That wasn't quite the solution I had in mind, but you got rid of the dragon either way."
             )
-            updateScore(2)
+            updateScore(20)
             data.quest.dragon.state = 6
         elseif data.quest.dragon.state == 5 then
             talkies.say(
                 "The King",
                 "Thank you so much for saving the kingdom."
             )
-            updateScore(3)
+            updateScore(30)
             data.quest.dragon.state = 6
         elseif data.quest.dragon.state == 6 then
             talkies.say(

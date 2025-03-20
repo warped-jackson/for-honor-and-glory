@@ -43,9 +43,9 @@ function love.keypressed(key)
         gamestate = 0
     end
 
-    if key == 'q' then
-        colliderToggle = not (colliderToggle and true);
-    end
+    --if key == 'q' then
+        --colliderToggle = not (colliderToggle and true);
+    --end
 
     if key == 'escape' then
         if pause.active then
@@ -55,11 +55,11 @@ function love.keypressed(key)
         end
     end
 
-    if key == 'i' then
-        if gamestate == 10 then
-            pause:toggle()
-        end
-    end
+    --if key == 'i' then
+        --if gamestate == 10 then
+            --pause:toggle()
+        --end
+    --end
 
     if key == 'space' then
         if talkies.isOpen() then

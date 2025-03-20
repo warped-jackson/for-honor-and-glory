@@ -35,8 +35,8 @@ function controls:draw()
         love.graphics.printf("Use Arrow Keys or WASD to move.", love.graphics.getWidth()/2 - 4000, 10 * scale, 8000, "center")
         love.graphics.printf("Use Spacebar to talk or select dialog option.", love.graphics.getWidth()/2 - 4000, 35 * scale, 8000, "center")
         love.graphics.printf("Use Up and Down Arrow Keys for selection in dialog.", love.graphics.getWidth()/2 - 4000, 60 * scale, 8000, "center")
-        love.graphics.printf("Use 'i' Key to view your inventory.", love.graphics.getWidth()/2 - 4000, 85 * scale, 8000, "center")
-        love.graphics.printf("Press Esc to close the game.", love.graphics.getWidth()/2 - 4000, 110 * scale, 8000, "center")
+        --love.graphics.printf("Use 'i' Key to view your inventory.", love.graphics.getWidth()/2 - 4000, 60 * scale, 8000, "center")
+        love.graphics.printf("Press Esc to close the game.", love.graphics.getWidth()/2 - 4000, 85 * scale, 8000, "center")
 
         for i, button in ipairs(buttons) do
             button.last = button.now

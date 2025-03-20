@@ -101,7 +101,7 @@ local function dragonInit(npc, x, y, args)
             )
             data.inventory.healingPotion = data.inventory.healingPotion - 1
             data.quest.dragon.state = 4
-            updateScore(3)
+            updateScore(30)
         end
 
         if type == "death" then
@@ -112,7 +112,7 @@ local function dragonInit(npc, x, y, args)
             data.inventory.deathPotion = data.inventory.deathPotion - 1
             npc.sprite = sprites.npc.dragonDead
             data.quest.dragon.state = 5
-            updateScore(-5)
+            updateScore(-50)
         end
     end
 

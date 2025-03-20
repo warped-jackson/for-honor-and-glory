@@ -25,13 +25,13 @@ function drawForHonorGloryBar()
         setWhite()
     end
     love.graphics.setFont(fonts.score)
-    love.graphics.printf("Score: "..data.score*10, 12*scale, 4*scale, 40*scale, "left")
+    love.graphics.printf("Score: "..data.score, 12*scale, 4*scale, 50*scale, "left")
     setWhite()
 
     bar.sprite = sprites.hud.forHonorAndGloryBarSheet
     bar.width = 206
     bar.height = 28
-    bar.x = 60*scale
+    bar.x = 72*scale
     bar.y = 3*scale
     bar.grid = anim8.newGrid(bar.width, bar.height, bar.sprite:getWidth(), bar.sprite:getHeight())
     bar.animation = {}
@@ -57,49 +57,48 @@ function drawForHonorGloryBar()
     bar.animation.positive9 = anim8.newAnimation(bar.grid(1, 20), 0.1)
     bar.animation.positive10 = anim8.newAnimation(bar.grid(1, 21), 0.1)
 
-    score_scale = data.score * 1
     bar.anim = bar.animation.neutral
-    if score_scale == -10 then
+    if data.score == -100 then
         bar.anim = bar.animation.negative10
-    elseif score_scale == -9 then
+    elseif data.score == -90 then
         bar.anim = bar.animation.negative9
-    elseif score_scale == -8 then
+    elseif data.score == -80 then
         bar.anim = bar.animation.negative8
-    elseif score_scale == -7 then
+    elseif data.score == -70 then
         bar.anim = bar.animation.negative7
-    elseif score_scale == -6 then
+    elseif data.score == -60 then
         bar.anim = bar.animation.negative6
-    elseif score_scale == -5 then
+    elseif data.score == -50 then
         bar.anim = bar.animation.negative5
-    elseif score_scale == -4 then
+    elseif data.score == -40 then
         bar.anim = bar.animation.negative4
-    elseif score_scale == -3 then
+    elseif data.score == -30 then
         bar.anim = bar.animation.negative3
-    elseif score_scale == -2 then
+    elseif data.score == -20 then
         bar.anim = bar.animation.negative2
-    elseif score_scale == -1 then
+    elseif data.score == -10 then
         bar.anim = bar.animation.negative1
-    elseif score_scale == 0 then
+    elseif data.score == 0 then
         bar.anim = bar.animation.neutral
-    elseif score_scale == 1 then
+    elseif data.score == 10 then
         bar.anim = bar.animation.positive1
-    elseif score_scale == 2 then
+    elseif data.score == 20 then
         bar.anim = bar.animation.positive2
-    elseif score_scale == 3 then
+    elseif data.score == 30 then
         bar.anim = bar.animation.positive3
-    elseif score_scale == 4 then
+    elseif data.score == 40 then
         bar.anim = bar.animation.positive4
-    elseif score_scale == 5 then
+    elseif data.score == 50 then
         bar.anim = bar.animation.positive5
-    elseif score_scale == 6 then
+    elseif data.score == 60 then
         bar.anim = bar.animation.positive6
-    elseif score_scale == 7 then
+    elseif data.score == 70 then
         bar.anim = bar.animation.positive7
-    elseif score_scale == 8 then
+    elseif data.score == 80 then
         bar.anim = bar.animation.positive8
-    elseif score_scale == 9 then
+    elseif data.score == 90 then
         bar.anim = bar.animation.positive9
-    elseif score_scale == 10 then
+    elseif data.score == 100 then
         bar.anim = bar.animation.positive10
     end
 
